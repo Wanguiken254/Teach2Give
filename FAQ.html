@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <link rel="stylesheet" href="FAQ.css">
+</head>
+
+<body>
+  <div class="faq-container">
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <div class="faq-question">What is Frontend Mentor, and how will it help me?</div>
+      <div class="faq-answer">
+        Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <div class="faq-question">Is Frontend Mentor free?</div>
+      <div class="faq-answer">
+        Yes, Frontend Mentor offers both free and premium coding challenges.
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <div class="faq-question">Can I use Frontend Mentor projects in my portfolio?</div>
+      <div class="faq-answer">
+        Absolutely! You can use the projects you build for your portfolio to showcase your skills.
+      </div>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <div class="faq-question">How can I get help if I’m stuck on a challenge?</div>
+      <div class="faq-answer">
+        You can get help from the Frontend Mentor community, forums, or Discord server.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add functionality to show/hide answers
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        // Hide all other answers
+        faqItems.forEach(faq => {
+          if (faq !== item) {
+            faq.classList.remove('active');
+          }
+        });
+
+        // Toggle active class on clicked item
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
